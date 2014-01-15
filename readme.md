@@ -1,0 +1,11 @@
+http://en.wikipedia.org/wiki/List_of_celebrities
+http://en.wikipedia.org/wiki/Lists_of_people
+http://en.wikipedia.org/wiki/Category:Lists_of_politicians_by_nationality
+http://en.wikipedia.org/wiki/Category:Lists_of_politicians
+http://en.wikipedia.org/wiki/Lists_of_people
+http://en.wikipedia.org/wiki/List_of_wealthiest_non-inflated_historical_figures
+http://en.wikipedia.org/wiki/List_of_wealthiest_historical_figures
+http://en.wikipedia.org/wiki/Lists_of_scientists
+http://en.wikipedia.org/wiki/List_of_most_expensive_paintings
+http://en.wikipedia.org/wiki/100_Great_Paintings
+http://en.wikipedia.org/wiki/List_of_painters_by_name
