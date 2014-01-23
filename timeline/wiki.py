@@ -8,6 +8,7 @@ import datetime
 import requests
 import json
 from pprint import pprint
+from bs4 import BeautifulSoup
 import mwparserfromhell
 import dataset
 
@@ -18,11 +19,6 @@ DATA_DIR = os.path.abspath('../data/')
 CACHE_FILE = DATA_DIR + '/cache.json'
 PEOPLE_FILE = DATA_DIR + '/people.txt'
 SIMPLE_FILE = DATA_DIR + '/version1.json'
-
-
-
-
-
 
 
 
@@ -43,33 +39,59 @@ class Wiki(object):
     '''Shutdown any open files'''
     json.dump(self.cache, open(CACHE_FILE, 'w'), indent=2)
   
-  def get_section_num(self, title, section):
-    pass
+  def get_section(self, title, sectionname, **kwargs):
+    params = dict(
+      action='parse',
+      prop='sections',
+      page=title,
+      format='json'
+    )
+    request = self.session.get(URL, params=params)
+    sections = json.loads(request.content)['parse']['sections']
+    for section in sections:
+      if sectionname in section['line']:
+        return self.get_page(title, section=section['index'], cache=False, **kwargs)
+    raise ValueError('Could not find section: {}.  Page Sections: {}'
+                      .format(sectionname, 
+                              ', '.join([s['line'] for s in sections]) ))
+    # print request.content
   
-  def get_page(self, title):
+  def get_page(self, title, cache=True, beautiful=False, **kwargs):
     '''Get a page
     http://en.wikipedia.org/w/api.php?
     action=parse&prop=wikitext&page=List_of_Nobel_laureates_in_Physics&
     format=json&section=1
     
     '''
-    if title in self.cache:
+    if title in self.cache and cache:
       return self.cache[title]
-      pass
+    if beautiful:
+      kwargs['prop'] = 'text'
+    
+    
     params = dict(
       action='parse',
       prop='wikitext',
       page=title,
       format='json',
     )
+    params.update(kwargs)
+    
     try:
       request = self.session.get(URL, params=params)
       print request.url
-      page = json.loads(request.content)['parse']['wikitext']['*']
-      self.cache[title] = page
-      return page 
+      page = json.loads(request.content)['parse'][params['prop']]['*']
+      if cache:
+        self.cache[title] = page
+      
+      if beautiful:
+        return BeautifulSoup(page)
+      else:
+        return page
+      # return page 
     except Exception as e:
       print 'Failed to get the page: {}'.format(title)
+      print request.content
       raise e
   
   def get_html(self, title, section):
@@ -150,19 +172,27 @@ class Wiki(object):
   #   
   #   return out
   
-  def get_list(self, title, section, group):
-    page = api.get_page(title)
-    code = mwparserfromhell.parse(page)
-    code
+  def get_list(self, title, section):
     out = []
-    for item in page.links:
-      print item
-      print parse_infobox(self.get_page(item))
-      # try:
-      #   out.append(self.get_person(item, group))
-      # except Exception as e:
-      #   print u'Failed: {}, {}, {}'.format(item, group, title)
-      #   # raise e
+    tmp =  self.get_section('List_of_Nobel_laureates_in_Physics','Laureates', 
+                            beautiful=True)
+    for i, row in enumerate(tmp.findAll('tr')):
+      for j,col in enumerate(row.findAll('td')):
+        if ( ((len(row) == 11) and (j == 2)) or
+             ((len(row) <  11) and (len(row) > 5) and (j == 1)) or 
+             ((len(row) ==  5) and( j == 0)) ):
+          if 'Not awarded' in str(row):
+            continue
+          
+          if 'Wilh' in str(row):
+            raise ValueError()
+            
+          try:
+            tmp = col.find('a').get('href').replace('/wiki/','')
+            out.append(tmp)
+          except:
+            print u'Failed to parse row: {} {}'.format(len(row), row.prettify())
+    return out
     
     
     
@@ -170,18 +200,57 @@ class Wiki(object):
 
 
 
-
-if __name__ == '__main__':
-  from pysurvey import util
-  util.setup_stop()
-  
+def parse_simple():
+  '''Get the people from the list and turn it into a json'''
   with Wiki() as api:
     out = []
     for person in open(PEOPLE_FILE,'r').readlines():
       out.append(api.get_person(person.strip(), None))
       print out
     json.dump(out, open(SIMPLE_FILE, 'w'), indent=2)
-    # Get the page and parse it
+  
+def parse_list():
+  with Wiki() as api:
+    people = api.get_list('List_of_Nobel_laureates_in_Physics','Laureates')
+    with open(PEOPLE_FILE,'w') as f:
+      for person in people:
+        f.write(u'{}\n'.format(person))
+    # json.dump(people, open(PEOPLE_FILE,'w'), indent=2)
+    print people
+  
+
+
+if __name__ == '__main__':
+  from pysurvey import util
+  util.setup_stop()
+  
+  
+  parse_list()
+  # parse_simple()
+  
+  # with Wiki() as api:
+  #   # api.debug_page('List_of_Nobel_laureates_in_Physics')
+  #   tmp =  api.get_section('List_of_Nobel_laureates_in_Physics','Laureates', beautiful=True)
+  #   for i, row in enumerate(tmp.findAll('tr')):
+  #     # if i > 10:
+  #     #   break
+  #     for j,col in enumerate(row.findAll('td')):
+  #       if ( ((len(row) == 11) and (j == 2)) or
+  #            ((len(row) <  11) and (len(row) > 5) and (j == 1)) or 
+  #            ((len(row) ==  5) and( j == 0)) ):
+  #         # print col.find('td').find('a').get('href')
+  #         if 'Not awarded' in str(row):
+  #           continue
+  #         
+  #         print col.find('a').get('href').replace('/wiki/','')
+  #         try:
+  #           pass
+  #         except:
+  #           print len(row), row.prettify()
+          
+    # print tmp.prettify()
+    # print mwparserfromhell.parse(tmp).html()
+  # Get the page and parse it
     # page = api.get_page('Albert Einstein')
     # print parse_infobox(page)
   
