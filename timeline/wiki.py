@@ -5,7 +5,7 @@ import json
 import codecs 
 import datetime
 from pprint import pprint
-
+from collections import OrderedDict
 
 # import urllib
 import dataset
@@ -26,6 +26,10 @@ SIMPLE_FILE = DATA_DIR + '/version1.json'
 
 
 
+class InfoError(Exception):
+  pass
+
+
 class Wiki(object):
   def __init__(self):
     self.session = requests.session()
@@ -43,36 +47,31 @@ class Wiki(object):
     '''Shutdown any open files'''
     json.dump(self.cache, open(CACHE_FILE, 'w'), indent=2)
   
-  def get_section(self, title, sectionname, **kwargs):
-    params = dict(
-      action='parse',
-      prop='sections',
-      page=title,
-      format='json'
-    )
-    request = self.session.get(URL, params=params)
-    sections = json.loads(request.content)['parse']['sections']
-    for section in sections:
-      if sectionname in section['line']:
-        return self.get_page(title, section=section['index'], cache=False, **kwargs)
-    raise ValueError('Could not find section: {}.  Page Sections: {}'
-                      .format(sectionname, 
-                              ', '.join([s['line'] for s in sections]) ))
-    # print request.content
   
   def get_page(self, title, cache=True, beautiful=False, **kwargs):
-    '''Get a page
+    '''Get the wikitext code of a wikipedia page with a title.
+    cache [True] -- Cache the page so that we are not abusing wikipedia
+    beautiful [False] -- Return the BeautifulSoup html code -- for tables
+    **kwargs -- updates the requests params
+    
+    Example URL:
     http://en.wikipedia.org/w/api.php?
     action=parse&prop=wikitext&page=List_of_Nobel_laureates_in_Physics&
     format=json&section=1
     
     '''
+    # Load from the cache
     if title in self.cache and cache:
-      return self.cache[title]
+      if beautiful:
+        return BeautifulSoup(self.cache[title])
+      else:
+        return self.cache[title]
+        
+    # If using BeautifulSoup get the html rather than the wikitext
     if beautiful:
       kwargs['prop'] = 'text'
     
-    
+    # url parameters for the wikipedia api
     params = dict(
       action='parse',
       prop='wikitext',
@@ -81,38 +80,57 @@ class Wiki(object):
     )
     params.update(kwargs)
     
-    # try:
     request = self.session.get(URL, params=params)
-    print request.url
-    
-    
+    print 'Loaded: {}'.format(request.url)
     page = json.loads(request.content)['parse'][params['prop']]['*']
     
-    # handle redirects
+    # handle redirects nicely
     if '#REDIRECT' in page:
-      newtitle = u'{}'.format(mwparserfromhell.parse(page)
-                                              .filter_wikilinks()[0].title)
-      return self.get_page(newtitle, 
-                           cache=cache, beautiful=beautiful, 
-                           **kwargs)
-      # raise ValueError()
-    
-    
+      code = mwparserfromhell.parse(page)
+      newtitle = u'{}'.format(code.filter_wikilinks()[0].title)
+      kwargs.update(dict(cache=cache, beautiful=beautiful))
+      return self.get_page(newtitle, **kwargs)
+  
+    # Save to the cache for the future
     if cache:
       self.cache[title] = page
-    
+  
+    # Output the wikitext string or make it beautiful
     if beautiful:
       return BeautifulSoup(page)
     else:
       return page
-
-    # except Exception as e:
-    #   print u'Failed to get the page: {}'.format(title)
-    #   print request.content
-    #   raise e
   
-  def get_html(self, title, section):
-    self
+  def debug_page(self, title):
+    '''Sometimes it is nice to debug'''
+    page = self.get_page(title)
+    code = mwparserfromhell.parse(page)
+    html = BeautifulSoup(self.get_page(title, beautiful=True))
+    raise ValueError()
+  
+  
+  def get_section(self, title, sectionname, **kwargs):
+    '''Get a section of a page.  Basically a wrapper around get_page() 
+    that figures out which section index to pull down.'''
+    
+    # Figure out what is the index for the section parameter
+    params = dict(
+      action='parse',
+      prop='sections',
+      page=title,
+      format='json',
+    )
+    request = self.session.get(URL, params=params)
+    sections = json.loads(request.content)['parse']['sections']
+    for section in sections:
+      if sectionname.lower() in section['line'].lower():
+        kwargs.update(dict(section=section['index']))
+        return self.get_page(title, **kwargs)
+    
+    tmp = ', '.join([s['line'] for s in sections])
+    raise ValueError('Could not find section: {}.  Page Sections: {}'
+                      .format(sectionname, tmp))
+  
   
   
   def parse_date(self, wikiDate):
@@ -123,18 +141,36 @@ class Wiki(object):
       a 'YYYY-MM-DD' string 
     '''
     template = mwparserfromhell.parse(str(wikiDate.value))
-    # return '-'.join(map(str,map(template.filter_templates()[0].get, [3,2,1])))
+
+
+    # make a few passes at parsing the date format
+    
     try:
-      return '-'.join(map(str,map(template.filter_templates()[0].get, [1,2,3])))
-    except:
-      # sometimes they include the age -- remove
-      template = str(template)
-      if '(' in template:
-        template = template.split('(')[0]
-      
+      tmp = map(template.filter_templates()[0].get, [1,2,3])
+      return '-'.join([str(t).strip() for t in tmp])
+    except Exception as e:
+      # print 'failed 1', e
+      pass
+    
+    template = str(template).split('(')[0].strip()
+    
+    try:
       tmp = datetime.datetime.strptime(template.strip(),'%B %d, %Y')
-      return tmp.strftime('%Y-%m-%d')
- 
+      # return tmp.strftime('%Y-%m-%d')
+      return tmp.isoformat().split('T')[0]
+    except Exception as e:
+      # print 'failed 2', e
+      pass
+    
+    try:
+      tmp = datetime.datetime.strptime(template.strip(),'%d %B %Y')
+      return tmp.isoformat().split('T')[0]
+    except Exception as e:
+      # print 'failed 3', e
+      pass
+    
+    raise ValueError('Could not parse date: {}'.format(wikiDate))
+    
  
   def parse_infobox(self, title, page):
     '''Parse out the nice mediawiki markdown to get birth and death
@@ -162,42 +198,30 @@ class Wiki(object):
 
         # ok we are done here
         return output
-    raise ValueError('Missing InfoBox')
+    raise InfoError()
   
-  def debug_page(self, title):
-    page = self.get_page(title)
-    code = mwparserfromhell.parse(page)
-    # pprint(page)
-    raise ValueError()
   
-  def get_person(self, name, group):
-    '''get a dictionary for a person.'''
+  
+  
+  
+  def get_person(self, name, group=None):
+    '''Get the dictionary for a person'''
     out = self.parse_infobox(name, self.get_page(name))
     out['group'] = group
     return out
-  
-  # def get_person(self, name, group):
-  #   '''Append the name, birth date, and death date to
-  #   the starting kwargs dictionary'''
-  #   table = self.db['people']
-  #   
-  #   out = table.find_one(name=name)
-  #   
-  #   if out is None:
-  #     out = parse_infobox(self.get_page(name))
-  #     out['group'] = group
-  #     table.insert(out)
-  #   
-  #   return out
+
   
   def get_list(self, title, section):
+    
+    
     out = []
     tmp =  self.get_section(title, section, beautiful=True)
     for i, row in enumerate(tmp.findAll('tr')):
       for j,col in enumerate(row.findAll('td')):
         if ( ((len(row) == 11) and (j == 2)) or
              ((len(row) <  11) and (len(row) > 5) and (j == 1)) or 
-             ((len(row) ==  5) and( j == 0)) ):
+             ((len(row) ==  5) and (j == 0)) or
+             ((len(row) == 15) and (j == 2)) ):
           if 'Not awarded' in str(row):
             continue
           
@@ -214,31 +238,61 @@ class Wiki(object):
     
 
 
+def parse_list():
+  lists = [
+    ['physics','List_of_Nobel_laureates_in_Physics'],
+    ['chemistry','List_of_Nobel_laureates_in_Chemistry'],
+    ['peace','List_of_Nobel_Peace_Prize_laureates'],
+    ['medicine','List_of_Nobel_laureates_in_Physiology_or_Medicine'],
+    ['literature','List_of_Nobel_laureates_in_Literature'],
+  ]
+  with Wiki() as api:
+    out = OrderedDict()
+    for group, title in lists:
+      out[group] = api.get_list(title, 'Laureates')
+      print group, title, len(out[group])
+      
+    with codecs.open(PEOPLE_FILE, 'w', 'utf-8') as f:
+      for group, people in out.items():
+        for person in people:
+          f.write(u'{}, {}\n'.format(group, person))
+    
+    # for person in people:
+    #   print person
+
+
+
 
 def parse_simple():
   '''Get the people from the list and turn it into a json'''
   with Wiki() as api:
     out = []
-    # tmp = codecs.open(PEOPLE_FILE, 'r', 'utf-8').readlines()
     with codecs.open(PEOPLE_FILE, 'r', 'utf-8') as f:
-      for person in f.readlines():
-        out.append(api.get_person(person.strip(), None))
-    # for person in open(PEOPLE_FILE,'r').readlines():
-    #   out.append(api.get_person(person.strip(), None))
-    #   print out
-    json.dump(out, open(SIMPLE_FILE, 'w'), indent=2)
+      for tmp in f.readlines():
+        group = tmp.split(',')[0].strip()
+        person = ','.join(tmp.split(',')[1:]).strip()
+        
+        try:
+          out.append(api.get_person(person, group))
+        except InfoError as e:
+          print person, group, e
+        
+  json.dump(out, open(SIMPLE_FILE, 'w'), indent=2)
   
-def parse_list():
-  with Wiki() as api:
-    people = api.get_list('List_of_Nobel_laureates_in_Physics','Laureates')
-    with codecs.open(PEOPLE_FILE, 'w', 'utf-8') as f:
-      # f.write(u'\ufeff')
-      for person in people:
-        f.write(u'{}\n'.format(person))
-    
-    # for person in people:
-    #   print person
+
+
+def parse_nice():
   
+  out = json.load(open(SIMPLE_FILE, 'r'))
+  m = dict(birth_date='start',
+           death_date='end',
+           title='id')
+  for o in out:
+    tmp = {v:o[k] for k,v in m.items()}
+    tmp['start'] == tmp['start'].split('-')[0]
+    tmp['end'] == tmp['end'].split('-')[0]
+    tmp['lane'] = 1
+    print '{},'.format(tmp)
 
 
 if __name__ == '__main__':
@@ -248,40 +302,9 @@ if __name__ == '__main__':
   
   # parse_list()
   parse_simple()
+  # parse_nice()
   
   # with Wiki() as api:
-  #   # api.debug_page('List_of_Nobel_laureates_in_Physics')
-  #   tmp =  api.get_section('List_of_Nobel_laureates_in_Physics','Laureates', beautiful=True)
-  #   for i, row in enumerate(tmp.findAll('tr')):
-  #     # if i > 10:
-  #     #   break
-  #     for j,col in enumerate(row.findAll('td')):
-  #       if ( ((len(row) == 11) and (j == 2)) or
-  #            ((len(row) <  11) and (len(row) > 5) and (j == 1)) or 
-  #            ((len(row) ==  5) and( j == 0)) ):
-  #         # print col.find('td').find('a').get('href')
-  #         if 'Not awarded' in str(row):
-  #           continue
-  #         
-  #         print col.find('a').get('href').replace('/wiki/','')
-  #         try:
-  #           pass
-  #         except:
-  #           print len(row), row.prettify()
-          
-    # print tmp.prettify()
-    # print mwparserfromhell.parse(tmp).html()
-  # Get the page and parse it
-    # page = api.get_page('Albert Einstein')
-    # print parse_infobox(page)
-  
-    # load the data into the db
-    # pprint(api.get_person('Albert Einstein', 'Scientist'))
-  
-  
-    # get a list of american
-    # api.debug_page('List_of_American_scientists')
-    # api.get_list('List_of_Nobel_laureates_in_Physics', 'Scientist')
-    # api.debug_page('api')
+  #   print api.get_person('J. J. Thomson', None)
   
   
