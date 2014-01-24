@@ -23,7 +23,7 @@ DATA_DIR = os.path.abspath('../data/')
 CACHE_FILE = DATA_DIR + '/cache.json'
 PEOPLE_FILE = DATA_DIR + '/people.txt'
 SIMPLE_FILE = DATA_DIR + '/version1.json'
-
+WAR_FILE = DATA_DIR + '/wars1.json'
 
 
 class InfoError(Exception):
@@ -39,6 +39,7 @@ class Wiki(object):
     '''simple cache '''
     try:
       self.cache = json.load(open(CACHE_FILE, 'r'))
+      # pprint([l for l in self.cache.keys() if 'list' in l.lower()])
     except ValueError as e:
       self.cache = {}
     return self
@@ -86,8 +87,12 @@ class Wiki(object):
     
     # handle redirects nicely
     if '#REDIRECT' in page:
-      code = mwparserfromhell.parse(page)
-      newtitle = u'{}'.format(code.filter_wikilinks()[0].title)
+      if beautiful:
+        code = BeautifulSoup(page)
+        newtitle = code.find('span',{'class','redirectText'}).find('a').get('title')
+      else:
+        code = mwparserfromhell.parse(page)
+        newtitle = u'{}'.format(code.filter_wikilinks()[0].title)
       kwargs.update(dict(cache=cache, beautiful=beautiful))
       return self.get_page(newtitle, **kwargs)
   
@@ -112,6 +117,9 @@ class Wiki(object):
   def get_section(self, title, sectionname, **kwargs):
     '''Get a section of a page.  Basically a wrapper around get_page() 
     that figures out which section index to pull down.'''
+    
+    if sectionname is None:
+      return self.get_page(title, **kwargs)
     
     # Figure out what is the index for the section parameter
     params = dict(
@@ -211,26 +219,61 @@ class Wiki(object):
     return out
 
   
-  def get_list(self, title, section):
+  def parse_nobel(self, row, col, j):
+    if ( ((len(row) == 11) and (j == 2)) or
+         ((len(row) <  11) and (len(row) > 5) and (j == 1)) or 
+         ((len(row) ==  5) and (j == 0)) or
+         ((len(row) == 15) and (j == 2)) ):
+      if 'Not awarded' in str(row):
+        return
+      
+      # tmp = col.find('a').get('href').replace('/wiki/','')
+      tmp = col.find('a').get('title').replace('/wiki/','')
+      return tmp
+  
+  def parse_war(self, row, col, j):
+    if ((len(row) == 11) and (j == 0)):
+      tmp = row.findAll('td')
+      try:
+        name = tmp[2].find('a').text
+        title = tmp[2].find('a').get('title')
+      except:
+        name = tmp[2].text
+        title = tmp[2].text
+      out = dict(
+        start = tmp[0].text.split('(')[0],
+        end   = tmp[1].text.split('(')[0],
+        name  = name,
+        title = title,
+      )
+      return out
+      # raise ValueError()
+      # print len(row), row
+      # for c in row.findAll('td'):
+      #   out[]
+      
+      
     
-    
+  
+  def get_list(self, title, section, parse_fcn):
     out = []
     tmp =  self.get_section(title, section, beautiful=True)
     for i, row in enumerate(tmp.findAll('tr')):
       for j,col in enumerate(row.findAll('td')):
-        if ( ((len(row) == 11) and (j == 2)) or
-             ((len(row) <  11) and (len(row) > 5) and (j == 1)) or 
-             ((len(row) ==  5) and (j == 0)) or
-             ((len(row) == 15) and (j == 2)) ):
-          if 'Not awarded' in str(row):
-            continue
-          
-          try:
-            # tmp = col.find('a').get('href').replace('/wiki/','')
-            tmp = col.find('a').get('title').replace('/wiki/','')
-            out.append(tmp)
-          except:
-            print u'Failed to parse row: {} {}'.format(len(row), row.prettify())
+        
+        tmp = parse_fcn(row, col, j)
+        if tmp is not None:
+          out.append(tmp)
+        
+        # try:
+        #   tmp = parse_fcn(row, col, j)
+        #   if tmp is not None:
+        #     out.append(tmp)
+        # except:
+        #   print u'Failed to parse row: {} {}'.format(len(row), row.prettify())
+        
+        # if i > 10: return out
+        
     return out
     
     
@@ -239,7 +282,7 @@ class Wiki(object):
 
 
 def parse_list():
-  lists = [
+  items = [
     ['physics','List_of_Nobel_laureates_in_Physics'],
     ['chemistry','List_of_Nobel_laureates_in_Chemistry'],
     ['peace','List_of_Nobel_Peace_Prize_laureates'],
@@ -248,8 +291,8 @@ def parse_list():
   ]
   with Wiki() as api:
     out = OrderedDict()
-    for group, title in lists:
-      out[group] = api.get_list(title, 'Laureates')
+    for group, title in items:
+      out[group] = api.get_list(title, 'Laureates', api.parse_nobel)
       print group, title, len(out[group])
       
     with codecs.open(PEOPLE_FILE, 'w', 'utf-8') as f:
@@ -260,7 +303,29 @@ def parse_list():
     # for person in people:
     #   print person
 
-
+def parse_war():
+  items = [
+   # u'List of wars 1000\u20131499',
+   # u'List of wars 1500\u20131799',
+    'List_of_wars_1000-1499',
+    'List_of_wars_1500-1799',
+    'List_of_wars_1800-1899',
+    'List_of_wars_1900-1944',
+    'List_of_wars_1945-1989',
+    'List_of_wars_1990-2002',
+    'List_of_wars_2003-2010',
+    'List_of_wars_2011-present',
+  ]
+  # out = OrderedDict()
+  out = []
+  with Wiki() as api:
+    for title in items:
+      # out[title] = api.get_list(title, None, api.parse_war)
+      out.extend(api.get_list(title, None, api.parse_war))
+      print title, len(out)
+  # pprint(out)
+  json.dump(out, open(WAR_FILE, 'w'), indent=2)
+    
 
 
 def parse_simple():
@@ -301,8 +366,10 @@ if __name__ == '__main__':
   
   
   # parse_list()
-  parse_simple()
+  # parse_simple()
   # parse_nice()
+  
+  parse_war()
   
   # with Wiki() as api:
   #   print api.get_person('J. J. Thomson', None)
