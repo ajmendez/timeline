@@ -1,14 +1,1372 @@
 [
   {
+    "birth_date": "1845-3-27", 
+    "death_date": "1923-2-10", 
+    "group": null, 
+    "name": "Wilhelm Conrad R\u00f6ntgen", 
+    "title": "Wilhelm R\u00f6ntgen"
+  }, 
+  {
+    "birth_date": "1853-7-18", 
+    "death_date": "1928-2-4", 
+    "group": null, 
+    "name": "Hendrik Antoon Lorentz", 
+    "title": "Hendrik Lorentz"
+  }, 
+  {
+    "birth_date": "1865-5-25", 
+    "death_date": "1943-10-9", 
+    "group": null, 
+    "name": "Pieter Zeeman", 
+    "title": "Pieter Zeeman"
+  }, 
+  {
+    "birth_date": "1852-12-15", 
+    "death_date": "1908-8-25", 
+    "group": null, 
+    "name": "Antoine Henri Becquerel", 
+    "title": "Henri Becquerel"
+  }, 
+  {
+    "birth_date": "1859-5-15", 
+    "death_date": "1906-4-19", 
+    "group": null, 
+    "name": "Pierre Curie", 
+    "title": "Pierre Curie"
+  }, 
+  {
+    "birth_date": "1867-11-7", 
+    "death_date": "1934-7-4", 
+    "group": null, 
+    "name": "Maria Salomea Sk\u0142odowska", 
+    "title": "Maria Sk\u0142odowska-Curie"
+  }, 
+  {
+    "birth_date": "1842-11-12", 
+    "death_date": "1919-6-30", 
+    "group": null, 
+    "name": "Lord Rayleigh", 
+    "title": "John Strutt, 3rd Baron Rayleigh"
+  }, 
+  {
+    "birth_date": "1862-6-7", 
+    "death_date": "1947-5-20", 
+    "group": null, 
+    "name": "Philipp Lenard <small>([[English language|eng]])", 
+    "title": "Philipp Lenard"
+  }, 
+  {
+    "birth_date": null, 
+    "death_date": "1940-8-30", 
+    "group": null, 
+    "name": "Joseph John Thomson", 
+    "title": "J. J. Thomson"
+  }, 
+  {
+    "birth_date": "1852-12-19", 
+    "death_date": "1931-5-9", 
+    "group": null, 
+    "name": "Albert Abraham Michelson", 
+    "title": "Albert Abraham Michelson"
+  }, 
+  {
+    "birth_date": "1845-8-16", 
+    "death_date": "1921-7-13", 
+    "group": null, 
+    "name": "Jonas Ferdinand Gabriel Lippmann", 
+    "title": "Gabriel Lippmann"
+  }, 
+  {
+    "birth_date": "1874-4-25", 
+    "death_date": "1937-7-20", 
+    "group": null, 
+    "name": "Guglielmo Marconi", 
+    "title": "Guglielmo Marconi"
+  }, 
+  {
+    "birth_date": "1850-6-6", 
+    "death_date": "1918-4-20", 
+    "group": null, 
+    "name": "Karl Ferdinand Braun", 
+    "title": "Karl Ferdinand Braun"
+  }, 
+  {
+    "birth_date": "1837-11-23", 
+    "death_date": "1923-3-8", 
+    "group": null, 
+    "name": "Johannes van der Waals", 
+    "title": "Johannes Diderik van der Waals"
+  }, 
+  {
+    "birth_date": "1864-1-13", 
+    "death_date": "1928-8-30", 
+    "group": null, 
+    "name": "Wilhelm Carl Werner Otto Fritz Franz Wien", 
+    "title": "Wilhelm Wien"
+  }, 
+  {
+    "birth_date": "1869-11-30", 
+    "death_date": "1937-12-9", 
+    "group": null, 
+    "name": "Nils Gustaf Dal\u00e9n", 
+    "title": "Gustaf Dal\u00e9n"
+  }, 
+  {
+    "birth_date": "1853-9-21", 
+    "death_date": "1926-2-21", 
+    "group": null, 
+    "name": "Heike Kamerlingh Onnes", 
+    "title": "Heike Kamerlingh Onnes"
+  }, 
+  {
+    "birth_date": "1879-10-9", 
+    "death_date": "1960-4-24", 
+    "group": null, 
+    "name": "Max Theodor Felix von Laue", 
+    "title": "Max von Laue"
+  }, 
+  {
+    "birth_date": "1862-7-2", 
+    "death_date": "1942-3-10", 
+    "group": null, 
+    "name": "Sir William Henry Bragg", 
+    "title": "William Henry Bragg"
+  }, 
+  {
+    "birth_date": "1890-03-31", 
+    "death_date": "1971-07-01", 
+    "group": null, 
+    "name": "Sir William Lawrence Bragg", 
+    "title": "William Lawrence Bragg"
+  }, 
+  {
+    "birth_date": "1877-6-7", 
+    "death_date": "1944-10-23", 
+    "group": null, 
+    "name": "Charles Glover Barkla", 
+    "title": "Charles Glover Barkla"
+  }, 
+  {
+    "birth_date": "1858-4-23", 
+    "death_date": "1947-10-4", 
+    "group": null, 
+    "name": "Max Karl Ernst Ludwig Planck", 
+    "title": "Max Planck"
+  }, 
+  {
+    "birth_date": "1874-4-15", 
+    "death_date": "1957-6-21", 
+    "group": null, 
+    "name": "Johannes Stark", 
+    "title": "Johannes Stark"
+  }, 
+  {
+    "birth_date": "1861-2-15", 
+    "death_date": "1938-5-13", 
+    "group": null, 
+    "name": "Charles \u00c9douard Guillaume", 
+    "title": "Charles \u00c9douard Guillaume"
+  }, 
+  {
     "birth_date": "1879-3-14", 
     "death_date": "1955-4-18", 
     "group": null, 
-    "name": "Albert Einstein"
+    "name": "Albert Einstein", 
+    "title": "Albert Einstein"
   }, 
   {
-    "birth_date": "1922-02-25", 
-    "death_date": "1983-07-12", 
+    "birth_date": "1885-10-7", 
+    "death_date": "1962-11-18", 
     "group": null, 
-    "name": "Ernst G. Straus"
+    "name": "Niels Henrik David Bohr", 
+    "title": "Niels Bohr"
+  }, 
+  {
+    "birth_date": "1868-3-22", 
+    "death_date": "1953-12-19", 
+    "group": null, 
+    "name": "Robert Andrews Millikan", 
+    "title": "Robert Andrews Millikan"
+  }, 
+  {
+    "birth_date": "1886-12-3", 
+    "death_date": "1978-9-26", 
+    "group": null, 
+    "name": "Karl Manne Georg Siegbahn", 
+    "title": "Manne Siegbahn"
+  }, 
+  {
+    "birth_date": "1882-8-26", 
+    "death_date": "1964-5-21", 
+    "group": null, 
+    "name": "James Franck", 
+    "title": "James Franck"
+  }, 
+  {
+    "birth_date": "1887-7-22", 
+    "death_date": "1975-10-30", 
+    "group": null, 
+    "name": "Gustav Ludwig Hertz", 
+    "title": "Gustav Ludwig Hertz"
+  }, 
+  {
+    "birth_date": "1870-9-30", 
+    "death_date": "1942-4-17", 
+    "group": null, 
+    "name": "Jean Baptiste Perrin", 
+    "title": "Jean Baptiste Perrin"
+  }, 
+  {
+    "birth_date": "1892-9-10", 
+    "death_date": "1962-3-15", 
+    "group": null, 
+    "name": "Arthur Holly Compton", 
+    "title": "Arthur Compton"
+  }, 
+  {
+    "birth_date": "1869-2-14", 
+    "death_date": "1959-11-15", 
+    "group": null, 
+    "name": "Charles Thomson Rees Wilson", 
+    "title": "Charles Thomson Rees Wilson"
+  }, 
+  {
+    "birth_date": "1879-04-26", 
+    "death_date": "1959-02-15", 
+    "group": null, 
+    "name": "Sir Owen Willans Richardson", 
+    "title": "Owen Willans Richardson"
+  }, 
+  {
+    "birth_date": "1892-8-15", 
+    "death_date": "1987-3-19", 
+    "group": null, 
+    "name": "Louis de Broglie", 
+    "title": "Louis de Broglie"
+  }, 
+  {
+    "birth_date": "1888-11-7", 
+    "death_date": "1970-11-21", 
+    "group": null, 
+    "name": "Sir Chandrasekhara Venkata Raman", 
+    "title": "C. V. Raman"
+  }, 
+  {
+    "birth_date": "1901-12-05", 
+    "death_date": "1976-02-01", 
+    "group": null, 
+    "name": "Werner Karl Heisenberg", 
+    "title": "Werner Heisenberg"
+  }, 
+  {
+    "birth_date": "1887-8-12", 
+    "death_date": "1961-1-4", 
+    "group": null, 
+    "name": "Erwin Rudolf Josef Alexander Schr\u00f6dinger", 
+    "title": "Erwin Schr\u00f6dinger"
+  }, 
+  {
+    "birth_date": "1902-8-8", 
+    "death_date": "1984-10-20", 
+    "group": null, 
+    "name": "Paul Adrien Maurice Dirac", 
+    "title": "Paul Dirac"
+  }, 
+  {
+    "birth_date": "1891-10-20", 
+    "death_date": "1974-7-24", 
+    "group": null, 
+    "name": "Sir James Chadwick", 
+    "title": "James Chadwick"
+  }, 
+  {
+    "birth_date": "1883-6-24", 
+    "death_date": "1964-12-17", 
+    "group": null, 
+    "name": "Victor Franz Hess", 
+    "title": "Victor Francis Hess"
+  }, 
+  {
+    "birth_date": "1905-9-3", 
+    "death_date": "1991-1-11", 
+    "group": null, 
+    "name": "Carl David Anderson", 
+    "title": "Carl David Anderson"
+  }, 
+  {
+    "birth_date": "1881-10-22", 
+    "death_date": "1958-02-01", 
+    "group": null, 
+    "name": "Clinton Joseph Davisson", 
+    "title": "Clinton Davisson"
+  }, 
+  {
+    "birth_date": "1892-5-3", 
+    "death_date": "1975-9-10", 
+    "group": null, 
+    "name": "Sir George Paget Thomson", 
+    "title": "George Paget Thomson"
+  }, 
+  {
+    "birth_date": "1901-9-29", 
+    "death_date": "1954-11-28", 
+    "group": null, 
+    "name": "Enrico Fermi", 
+    "title": "Enrico Fermi"
+  }, 
+  {
+    "birth_date": "1901-8-8", 
+    "death_date": "1958-8-27", 
+    "group": null, 
+    "name": "Ernest O. Lawrence", 
+    "title": "Ernest Lawrence"
+  }, 
+  {
+    "birth_date": "1888-2-17", 
+    "death_date": "1969-8-17", 
+    "group": null, 
+    "name": "Otto Stern", 
+    "title": "Otto Stern"
+  }, 
+  {
+    "birth_date": "1898-7-29", 
+    "death_date": "1988-1-11", 
+    "group": null, 
+    "name": "Israel Isaac Rabi", 
+    "title": "Isidor Isaac Rabi"
+  }, 
+  {
+    "birth_date": "1900-4-25", 
+    "death_date": "1958-12-15", 
+    "group": null, 
+    "name": "Wolfgang Ernst Pauli", 
+    "title": "Wolfgang Pauli"
+  }, 
+  {
+    "birth_date": "1882-04-21", 
+    "death_date": "1961-08-20", 
+    "group": null, 
+    "name": "Percy Williams Bridgman", 
+    "title": "Percy Williams Bridgman"
+  }, 
+  {
+    "birth_date": "1892-9-6", 
+    "death_date": "1965-4-21", 
+    "group": null, 
+    "name": "Edward Victor Appleton", 
+    "title": "Edward Victor Appleton"
+  }, 
+  {
+    "birth_date": "1897-11-18", 
+    "death_date": "1974-7-13", 
+    "group": null, 
+    "name": "Patrick Maynard Stuart Blackett", 
+    "title": "Patrick Blackett, Baron Blackett"
+  }, 
+  {
+    "birth_date": "1907-01-23", 
+    "death_date": "1981-09-08", 
+    "group": null, 
+    "name": "Hideki Yukawa \u6e6f\u5ddd \u79c0\u6a39", 
+    "title": "Hideki Yukawa"
+  }, 
+  {
+    "birth_date": "1903-12-5", 
+    "death_date": "1969-8-9", 
+    "group": null, 
+    "name": "Cecil Frank Powell", 
+    "title": "C. F. Powell"
+  }, 
+  {
+    "birth_date": "1897-05-27", 
+    "death_date": "1967-09-18", 
+    "group": null, 
+    "name": "Sir John Cockcroft", 
+    "title": "John Cockcroft"
+  }, 
+  {
+    "birth_date": null, 
+    "death_date": "1995-6-25", 
+    "group": null, 
+    "name": "Ernest Thomas Sinton Walton", 
+    "title": "Ernest Walton"
+  }, 
+  {
+    "birth_date": "1905-10-23", 
+    "death_date": "1983-9-10", 
+    "group": null, 
+    "name": "Felix Bloch", 
+    "title": "Felix Bloch"
+  }, 
+  {
+    "birth_date": "1912-8-30", 
+    "death_date": "1997-3-7", 
+    "group": null, 
+    "name": "Edward Purcell", 
+    "title": "Edward Mills Purcell"
+  }, 
+  {
+    "birth_date": null, 
+    "death_date": "1966-03-10", 
+    "group": null, 
+    "name": "Frits Zernike", 
+    "title": "Frits Zernike"
+  }, 
+  {
+    "birth_date": "1882-12-11", 
+    "death_date": "1970-1-5", 
+    "group": null, 
+    "name": "Max Born", 
+    "title": "Max Born"
+  }, 
+  {
+    "birth_date": "1891-1-8", 
+    "death_date": "1957-2-8", 
+    "group": null, 
+    "name": "Walther Bothe", 
+    "title": "Walther Bothe"
+  }, 
+  {
+    "birth_date": "1913-7-12", 
+    "death_date": "2008-5-15", 
+    "group": null, 
+    "name": "Willis Eugene Lamb, Jr.", 
+    "title": "Willis Lamb"
+  }, 
+  {
+    "birth_date": "1911-1-26", 
+    "death_date": "1993-3-20", 
+    "group": null, 
+    "name": "Polykarp Kusch", 
+    "title": "Polykarp Kusch"
+  }, 
+  {
+    "birth_date": "1908-05-23", 
+    "death_date": "1991-01-30", 
+    "group": null, 
+    "name": "John Bardeen", 
+    "title": "John Bardeen"
+  }, 
+  {
+    "birth_date": "1902-02-10", 
+    "death_date": "1987-10-13", 
+    "group": null, 
+    "name": "Walter Houser Brattain", 
+    "title": "Walter Houser Brattain"
+  }, 
+  {
+    "birth_date": "1910-2-13", 
+    "death_date": "1989-8-12", 
+    "group": null, 
+    "name": "William Bradford Shockley Jr.", 
+    "title": "William Shockley"
+  }, 
+  {
+    "birth_date": "1926-11-24", 
+    "death_date": null, 
+    "group": null, 
+    "name": "Tsung-Dao (T.D.) Lee", 
+    "title": "Tsung-Dao Lee"
+  }, 
+  {
+    "birth_date": "1922-10-01", 
+    "death_date": null, 
+    "group": null, 
+    "name": "Chen-Ning Franklin Yang", 
+    "title": "Chen Ning Yang"
+  }, 
+  {
+    "birth_date": "1904-07-28", 
+    "death_date": "1990-01-06", 
+    "group": null, 
+    "title": "Pavel Cherenkov"
+  }, 
+  {
+    "birth_date": "1908-10-23", 
+    "death_date": "1990-6-22", 
+    "group": null, 
+    "name": "Ilya Mikhailovich Frank", 
+    "title": "Ilya Frank"
+  }, 
+  {
+    "birth_date": "1895-07-08", 
+    "death_date": "1971-04-12", 
+    "group": null, 
+    "name": "Igor Yevgenyevich Tamm", 
+    "title": "Igor Tamm"
+  }, 
+  {
+    "birth_date": "1920-07-10", 
+    "death_date": "2006-02-28", 
+    "group": null, 
+    "name": "Owen Chamberlain", 
+    "title": "Owen Chamberlain"
+  }, 
+  {
+    "birth_date": "1905-2-1", 
+    "death_date": "1989-4-22", 
+    "group": null, 
+    "name": "Emilio Gino Segr\u00e8", 
+    "title": "Emilio G. Segr\u00e8"
+  }, 
+  {
+    "birth_date": "1926-9-21", 
+    "death_date": "2013-02-28", 
+    "group": null, 
+    "name": "Donald Arthur Glaser", 
+    "title": "Donald A. Glaser"
+  }, 
+  {
+    "birth_date": "1915-2-5", 
+    "death_date": "1990-11-17", 
+    "group": null, 
+    "name": "Robert Hofstadter", 
+    "title": "Robert Hofstadter"
+  }, 
+  {
+    "birth_date": "1929-1-31", 
+    "death_date": "2011-9-14", 
+    "group": null, 
+    "name": "Rudolf Ludwig M\u00f6ssbauer", 
+    "title": "Rudolf M\u00f6ssbauer"
+  }, 
+  {
+    "birth_date": "1908-1-22", 
+    "death_date": "1968-4-1", 
+    "group": null, 
+    "name": "Lev Davidovich Landau", 
+    "title": "Lev Landau"
+  }, 
+  {
+    "birth_date": "1902-11-17", 
+    "death_date": "1995-1-1", 
+    "group": null, 
+    "name": "Eugene Paul Wigner", 
+    "title": "Eugene Wigner"
+  }, 
+  {
+    "birth_date": "1906-6-28", 
+    "death_date": "1972-2-20", 
+    "group": null, 
+    "name": "Maria Goeppert-Mayer", 
+    "title": "Maria Goeppert-Mayer"
+  }, 
+  {
+    "birth_date": null, 
+    "death_date": null, 
+    "group": null, 
+    "name": "Johannes Hans Daniel Jensen", 
+    "title": "J. Hans D. Jensen"
+  }, 
+  {
+    "birth_date": "1922-12-14", 
+    "death_date": "2001-7-1", 
+    "group": null, 
+    "name": "Nicolay Gennadiyevich Basov", 
+    "title": "Nikolay Basov"
+  }, 
+  {
+    "birth_date": "1916-07-11", 
+    "death_date": "2002-01-08", 
+    "group": null, 
+    "title": "Alexander Prokhorov"
+  }, 
+  {
+    "birth_date": "1915-7-28", 
+    "death_date": null, 
+    "group": null, 
+    "name": "Charles Hard Townes", 
+    "title": "Charles Hard Townes"
+  }, 
+  {
+    "birth_date": "1918-5-11", 
+    "death_date": "1988-2-15", 
+    "group": null, 
+    "name": "Richard Phillips Feynman", 
+    "title": "Richard Feynman"
+  }, 
+  {
+    "birth_date": "1918-2-12", 
+    "death_date": "1994-7-16", 
+    "group": null, 
+    "name": "Julian Seymour Schwinger", 
+    "title": "Julian Schwinger"
+  }, 
+  {
+    "birth_date": "1906-3-31", 
+    "death_date": "1979-7-8", 
+    "group": null, 
+    "name": "Sin-Itiro Tomonaga (\u671d\u6c38 \u632f\u4e00\u90ce)", 
+    "title": "Sin-Itiro Tomonaga"
+  }, 
+  {
+    "birth_date": null, 
+    "death_date": null, 
+    "group": null, 
+    "name": "Alfred Kastler", 
+    "title": "Alfred Kastler"
+  }, 
+  {
+    "birth_date": "1906-7-2", 
+    "death_date": "2005-3-6", 
+    "group": null, 
+    "name": "Hans Albrecht Bethe", 
+    "title": "Hans Bethe"
+  }, 
+  {
+    "birth_date": "1911-6-13", 
+    "death_date": "1988-9-1", 
+    "group": null, 
+    "name": "Luis Walter Alvarez", 
+    "title": "Luis Walter Alvarez"
+  }, 
+  {
+    "birth_date": "1929-9-15", 
+    "death_date": null, 
+    "group": null, 
+    "name": "Murray Gell-Mann", 
+    "title": "Murray Gell-Mann"
+  }, 
+  {
+    "birth_date": "1908-5-30", 
+    "death_date": "1995-4-2", 
+    "group": null, 
+    "name": "Hannes Olof G\u00f6sta Alfv\u00e9n", 
+    "title": "Hannes Alfv\u00e9n"
+  }, 
+  {
+    "birth_date": "1904-11-22", 
+    "death_date": "2000-11-17", 
+    "group": null, 
+    "name": "Louis Eug\u00e8ne F\u00e9lix N\u00e9el", 
+    "title": "Louis N\u00e9el"
+  }, 
+  {
+    "birth_date": "1900-6-5", 
+    "death_date": "1979-2-8", 
+    "group": null, 
+    "name": "Dennis Gabor", 
+    "title": "Dennis Gabor"
+  }, 
+  {
+    "birth_date": "1908-05-23", 
+    "death_date": "1991-01-30", 
+    "group": null, 
+    "name": "John Bardeen", 
+    "title": "John Bardeen"
+  }, 
+  {
+    "birth_date": "1930-2-28", 
+    "death_date": null, 
+    "group": null, 
+    "name": "Leon N Cooper", 
+    "title": "Leon Cooper"
+  }, 
+  {
+    "birth_date": "1931-5-31", 
+    "death_date": null, 
+    "group": null, 
+    "name": "John Robert Schrieffer", 
+    "title": "John Robert Schrieffer"
+  }, 
+  {
+    "birth_date": "1925-3-12", 
+    "death_date": null, 
+    "group": null, 
+    "name": "Leo Esaki", 
+    "title": "Leo Esaki"
+  }, 
+  {
+    "birth_date": "1929-04-05", 
+    "death_date": null, 
+    "group": null, 
+    "name": "Ivar Gi\u00e6ver", 
+    "title": "Ivar Giaever"
+  }, 
+  {
+    "birth_date": "1940-1-4", 
+    "death_date": null, 
+    "group": null, 
+    "name": "Brian Josephson", 
+    "title": "Brian David Josephson"
+  }, 
+  {
+    "birth_date": "1918-09-27", 
+    "death_date": "1984-10-14", 
+    "group": null, 
+    "name": "Martin Ryle", 
+    "title": "Martin Ryle"
+  }, 
+  {
+    "birth_date": "1924-05-11", 
+    "death_date": null, 
+    "group": null, 
+    "name": "Antony Hewish", 
+    "title": "Antony Hewish"
+  }, 
+  {
+    "birth_date": "1922-6-19", 
+    "death_date": "2009-9-9", 
+    "group": null, 
+    "name": "Aage Niels Bohr", 
+    "title": "Aage Bohr"
+  }, 
+  {
+    "birth_date": "1926-7-9", 
+    "death_date": null, 
+    "group": null, 
+    "name": "Ben Roy Mottelson", 
+    "title": "Ben Roy Mottelson"
+  }, 
+  {
+    "birth_date": "1917-12-9", 
+    "death_date": "1986-5-31", 
+    "group": null, 
+    "name": "Leo James Rainwater", 
+    "title": "James Rainwater"
+  }, 
+  {
+    "birth_date": "1931-03-22", 
+    "death_date": null, 
+    "group": null, 
+    "name": "Burton Richter", 
+    "title": "Burton Richter"
+  }, 
+  {
+    "birth_date": "1936-1-27", 
+    "death_date": null, 
+    "group": null, 
+    "name": "Samuel Chao Chung Ting", 
+    "title": "Samuel C. C. Ting"
+  }, 
+  {
+    "birth_date": "1923-12-13", 
+    "death_date": null, 
+    "group": null, 
+    "name": "Philip Warren Anderson", 
+    "title": "Philip Warren Anderson"
+  }, 
+  {
+    "birth_date": "1905-9-30", 
+    "death_date": "1996-8-8", 
+    "group": null, 
+    "name": "Nevill Francis Mott", 
+    "title": "Nevill Francis Mott"
+  }, 
+  {
+    "birth_date": null, 
+    "death_date": "1980-10-27", 
+    "group": null, 
+    "name": "John Hasbrouck Van Vleck", 
+    "title": "John Hasbrouck Van Vleck"
+  }, 
+  {
+    "birth_date": "1894-7-8", 
+    "death_date": "1984-4-8", 
+    "group": null, 
+    "name": "Pyotr Leonidovich Kapitsa", 
+    "title": "Pyotr Kapitsa"
+  }, 
+  {
+    "birth_date": "1933-4-26", 
+    "death_date": null, 
+    "group": null, 
+    "name": "Arno Allan Penzias", 
+    "title": "Arno Allan Penzias"
+  }, 
+  {
+    "birth_date": "1936-1-10", 
+    "death_date": null, 
+    "group": null, 
+    "name": "Robert Woodrow Wilson (left) with [[Arno Allan Penzias]]", 
+    "title": "Robert Woodrow Wilson"
+  }, 
+  {
+    "birth_date": "1932-12-5", 
+    "death_date": null, 
+    "group": null, 
+    "name": "Sheldon Lee Glashow", 
+    "title": "Sheldon Lee Glashow"
+  }, 
+  {
+    "birth_date": null, 
+    "death_date": "1996-11-21", 
+    "group": null, 
+    "name": "Mohammad Abdus Salam <br>{{lang|ur|{{Nastaliq|\u0645\u062d\u0645\u062f \u0639\u0628\u062f \u0627\u0644\u0633\u0644\u0627\u0645}}}}", 
+    "title": "Abdus Salam"
+  }, 
+  {
+    "birth_date": "1933-5-3", 
+    "death_date": null, 
+    "group": null, 
+    "name": "Steven Weinberg", 
+    "title": "Steven Weinberg"
+  }, 
+  {
+    "birth_date": "1931-09-29", 
+    "death_date": null, 
+    "group": null, 
+    "name": "James Watson Cronin", 
+    "title": "James Cronin"
+  }, 
+  {
+    "birth_date": "1923-3-10", 
+    "death_date": null, 
+    "group": null, 
+    "name": "Val Logsdon Fitch", 
+    "title": "Val Logsdon Fitch"
+  }, 
+  {
+    "birth_date": "1920-3-11", 
+    "death_date": null, 
+    "group": null, 
+    "name": "Nicolaas Bloembergen", 
+    "title": "Nicolaas Bloembergen"
+  }, 
+  {
+    "birth_date": "1921-5-5", 
+    "death_date": "1999-4-28", 
+    "group": null, 
+    "name": "Arthur Leonard Schawlow", 
+    "title": "Arthur Leonard Schawlow"
+  }, 
+  {
+    "birth_date": "1918-4-20", 
+    "death_date": "2007-7-20", 
+    "group": null, 
+    "name": "Kai Siegbahn", 
+    "title": "Kai Siegbahn"
+  }, 
+  {
+    "birth_date": "1936-6-8", 
+    "death_date": "2013-6-15", 
+    "group": null, 
+    "name": "Kenneth Geddes Wilson", 
+    "title": "Kenneth G. Wilson"
+  }, 
+  {
+    "birth_date": "1910-10-19", 
+    "death_date": "1995-08-21", 
+    "group": null, 
+    "name": "Subrahmanyan Chandrasekhar", 
+    "title": "Subrahmanyan Chandrasekhar"
+  }, 
+  {
+    "birth_date": "1911-8-9", 
+    "death_date": "1995-3-14", 
+    "group": null, 
+    "name": "Willie Fowler", 
+    "title": "William Alfred Fowler"
+  }, 
+  {
+    "birth_date": "1934-3-31", 
+    "death_date": null, 
+    "group": null, 
+    "name": "<small>[[Senator for life]]<br>of the [[Italian Republic]]</small> <br>Carlo Rubbia", 
+    "title": "Carlo Rubbia"
+  }, 
+  {
+    "birth_date": "1925-11-24", 
+    "death_date": "2011-3-4", 
+    "group": null, 
+    "name": "Simon van der Meer", 
+    "title": "Simon van der Meer"
+  }, 
+  {
+    "birth_date": "1943-6-28", 
+    "death_date": null, 
+    "group": null, 
+    "name": "Klaus von Klitzing", 
+    "title": "Klaus von Klitzing"
+  }, 
+  {
+    "birth_date": "1906-12-25", 
+    "death_date": "1988-5-27", 
+    "group": null, 
+    "name": "Ernst August Friedrich Ruska", 
+    "title": "Ernst Ruska"
+  }, 
+  {
+    "birth_date": "1947-7-20", 
+    "death_date": null, 
+    "group": null, 
+    "name": "Gerd Binnig", 
+    "title": "Gerd Binnig"
+  }, 
+  {
+    "birth_date": "1933-6-6", 
+    "death_date": "2013-5-16", 
+    "group": null, 
+    "name": "Heinrich Rohrer", 
+    "title": "Heinrich Rohrer"
+  }, 
+  {
+    "birth_date": "1950-05-16", 
+    "death_date": null, 
+    "group": null, 
+    "name": "Johannes Georg Bednorz", 
+    "title": "Johannes Georg Bednorz"
+  }, 
+  {
+    "birth_date": "1927-4-20", 
+    "death_date": null, 
+    "group": null, 
+    "name": "Karl Alexander M\u00fcller", 
+    "title": "Karl Alexander M\u00fcller"
+  }, 
+  {
+    "birth_date": "1922-07-15", 
+    "death_date": null, 
+    "group": null, 
+    "name": "Leon Max Lederman", 
+    "title": "Leon M. Lederman"
+  }, 
+  {
+    "birth_date": "1932-11-2", 
+    "death_date": "2006-8-28", 
+    "group": null, 
+    "name": "Melvin Schwartz", 
+    "title": "Melvin Schwartz"
+  }, 
+  {
+    "birth_date": "1921-05-25", 
+    "death_date": null, 
+    "group": null, 
+    "name": "Hans Jakob Steinberger", 
+    "title": "Jack Steinberger"
+  }, 
+  {
+    "birth_date": "1915-8-27", 
+    "death_date": "2011-11-4", 
+    "group": null, 
+    "name": "Norman Foster Ramsey, Jr.", 
+    "title": "Norman Foster Ramsey, Jr."
+  }, 
+  {
+    "birth_date": "1922-09-09", 
+    "death_date": null, 
+    "group": null, 
+    "name": "Hans Georg Dehmelt", 
+    "title": "Hans Georg Dehmelt"
+  }, 
+  {
+    "birth_date": "1913-8-10", 
+    "death_date": "1993-12-7", 
+    "group": null, 
+    "name": "Wolfgang Paul", 
+    "title": "Wolfgang Paul"
+  }, 
+  {
+    "birth_date": "1930-3-28", 
+    "death_date": null, 
+    "group": null, 
+    "name": "Jerome Isaac Friedman", 
+    "title": "Jerome Isaac Friedman"
+  }, 
+  {
+    "birth_date": "1926-12-9", 
+    "death_date": "1999-2-15", 
+    "group": null, 
+    "name": "Henry Way Kendall", 
+    "title": "Henry Way Kendall"
+  }, 
+  {
+    "birth_date": "1929-11-2", 
+    "death_date": null, 
+    "group": null, 
+    "name": "Richard Edward Taylor", 
+    "title": "Richard E. Taylor"
+  }, 
+  {
+    "birth_date": "1932-10-24", 
+    "death_date": "2007-5-18", 
+    "group": null, 
+    "name": "Pr. Pierre-Gilles de Gennes", 
+    "title": "Pierre-Gilles de Gennes"
+  }, 
+  {
+    "birth_date": "1924-8-1", 
+    "death_date": "2010-9-29", 
+    "group": null, 
+    "name": "Georges Charpak", 
+    "title": "Georges Charpak"
+  }, 
+  {
+    "birth_date": "1950-11-28", 
+    "death_date": null, 
+    "group": null, 
+    "name": "Russell Alan Hulse", 
+    "title": "Russell Alan Hulse"
+  }, 
+  {
+    "birth_date": "1941-03-29", 
+    "death_date": null, 
+    "group": null, 
+    "name": "Joseph Hooton Taylor, Jr.", 
+    "title": "Joseph Hooton Taylor, Jr."
+  }, 
+  {
+    "birth_date": "1918-07-15", 
+    "death_date": "2003-10-13", 
+    "group": null, 
+    "name": "Bertram Brockhouse", 
+    "title": "Bertram Brockhouse"
+  }, 
+  {
+    "birth_date": "1915-09-23", 
+    "death_date": "2001-03-31", 
+    "group": null, 
+    "name": "Clifford Shull", 
+    "title": "Clifford Shull"
+  }, 
+  {
+    "birth_date": "1927-6-24", 
+    "death_date": null, 
+    "group": null, 
+    "name": "Martin Lewis Perl", 
+    "title": "Martin Lewis Perl"
+  }, 
+  {
+    "birth_date": "1918-03-16", 
+    "death_date": "1998-08-26", 
+    "group": null, 
+    "name": "Frederick Reines", 
+    "title": "Frederick Reines"
+  }, 
+  {
+    "birth_date": "1931-1-20", 
+    "death_date": null, 
+    "group": null, 
+    "name": "David Morris Lee", 
+    "title": "David Lee (physicist)"
+  }, 
+  {
+    "birth_date": "1945-08-01", 
+    "death_date": null, 
+    "group": null, 
+    "name": "Douglas Dean Osheroff", 
+    "title": "Douglas Osheroff"
+  }, 
+  {
+    "birth_date": "1937-6-26", 
+    "death_date": "2013-2-19", 
+    "group": null, 
+    "name": "Robert Coleman Richardson", 
+    "title": "Robert Coleman Richardson"
+  }, 
+  {
+    "birth_date": "1948-2-28", 
+    "death_date": null, 
+    "group": null, 
+    "name": "Steven Chu", 
+    "title": "Steven Chu"
+  }, 
+  {
+    "birth_date": "1933-04-01", 
+    "death_date": null, 
+    "group": null, 
+    "name": "Claude Cohen-Tannoudji", 
+    "title": "Claude Cohen-Tannoudji"
+  }, 
+  {
+    "birth_date": "1948-11-5", 
+    "death_date": null, 
+    "group": null, 
+    "name": "William Daniel Phillips", 
+    "title": "William Daniel Phillips"
+  }, 
+  {
+    "birth_date": "1950-11-1", 
+    "death_date": null, 
+    "group": null, 
+    "name": "Robert Betts Laughlin", 
+    "title": "Robert B. Laughlin"
+  }, 
+  {
+    "birth_date": "1949-4-6", 
+    "death_date": null, 
+    "group": null, 
+    "name": "Horst Ludwig St\u00f6rmer", 
+    "title": "Horst Ludwig St\u00f6rmer"
+  }, 
+  {
+    "birth_date": "1939-02-28", 
+    "death_date": null, 
+    "group": null, 
+    "name": "Daniel C. Tsui <br> \u5d14\u7426", 
+    "title": "Daniel C. Tsui"
+  }, 
+  {
+    "birth_date": "1946-7-5", 
+    "death_date": null, 
+    "group": null, 
+    "name": "Gerard 't Hooft", 
+    "title": "Gerard 't Hooft"
+  }, 
+  {
+    "birth_date": "1931-6-27", 
+    "death_date": null, 
+    "group": null, 
+    "name": "Martinus Justinus Godefriedus Veltman", 
+    "title": "Martinus J. G. Veltman"
+  }, 
+  {
+    "birth_date": "1930-3-15", 
+    "death_date": null, 
+    "group": null, 
+    "name": "Zhores Ivanovich Alferov", 
+    "title": "Zhores Alferov"
+  }, 
+  {
+    "birth_date": "1928-8-25", 
+    "death_date": null, 
+    "group": null, 
+    "name": "Herbert Kroemer", 
+    "title": "Herbert Kroemer"
+  }, 
+  {
+    "birth_date": "1923-11-8", 
+    "death_date": "2005-6-20", 
+    "group": null, 
+    "name": "Jack Kilby", 
+    "title": "Jack Kilby"
+  }, 
+  {
+    "birth_date": "1961-12-19", 
+    "death_date": null, 
+    "group": null, 
+    "name": "Eric Allin Cornell", 
+    "title": "Eric Allin Cornell"
+  }, 
+  {
+    "birth_date": "1951-3-26", 
+    "death_date": null, 
+    "group": null, 
+    "name": "Carl Edwin Wieman", 
+    "title": "Carl Wieman"
+  }, 
+  {
+    "birth_date": "1957-10-21", 
+    "death_date": null, 
+    "group": null, 
+    "name": "Wolfgang Ketterle", 
+    "title": "Wolfgang Ketterle"
+  }, 
+  {
+    "birth_date": "1914-10-14", 
+    "death_date": "2006-05-31", 
+    "group": null, 
+    "name": "Raymond Davis, Jr.", 
+    "title": "Raymond Davis, Jr."
+  }, 
+  {
+    "birth_date": "1926-9-19", 
+    "death_date": null, 
+    "group": null, 
+    "name": "Masatoshi Koshiba", 
+    "title": "Masatoshi Koshiba"
+  }, 
+  {
+    "birth_date": "1931-10-6", 
+    "death_date": null, 
+    "group": null, 
+    "name": "Riccardo Giacconi", 
+    "title": "Riccardo Giacconi"
+  }, 
+  {
+    "birth_date": "1928-6-25", 
+    "death_date": null, 
+    "group": null, 
+    "name": "Alexei Alexeyevich Abrikosov", 
+    "title": "Alexei Alexeyevich Abrikosov"
+  }, 
+  {
+    "birth_date": "1916-10-4", 
+    "death_date": "2009-11-08", 
+    "group": null, 
+    "name": "Vitaly Lazarevich Ginzburg", 
+    "title": "Vitaly Ginzburg"
+  }, 
+  {
+    "birth_date": "1938-3-26", 
+    "death_date": null, 
+    "group": null, 
+    "name": "Anthony James \"Tony\" Leggett", 
+    "title": "Anthony James Leggett"
+  }, 
+  {
+    "birth_date": "1941-2-19", 
+    "death_date": null, 
+    "group": null, 
+    "name": "David Jonathan Gross", 
+    "title": "David Gross"
+  }, 
+  {
+    "birth_date": "1949-8-31", 
+    "death_date": null, 
+    "group": null, 
+    "name": "Hugh David Politzer", 
+    "title": "Hugh David Politzer"
+  }, 
+  {
+    "birth_date": "1951-5-15", 
+    "death_date": null, 
+    "group": null, 
+    "name": "Frank Anthony Wilczek", 
+    "title": "Frank Wilczek"
+  }, 
+  {
+    "birth_date": "1925-9-1", 
+    "death_date": null, 
+    "group": null, 
+    "name": "Roy J. Glauber", 
+    "title": "Roy J. Glauber"
+  }, 
+  {
+    "birth_date": "1934-8-21", 
+    "death_date": null, 
+    "group": null, 
+    "name": "John Lewis Hall", 
+    "title": "John L. Hall"
+  }, 
+  {
+    "birth_date": "1941-10-30", 
+    "death_date": null, 
+    "group": null, 
+    "name": "Theodor Wolfgang H\u00e4nsch", 
+    "title": "Theodor W. H\u00e4nsch"
+  }, 
+  {
+    "birth_date": "1946-8-7", 
+    "death_date": null, 
+    "group": null, 
+    "name": "John Cromwell Mather", 
+    "title": "John C. Mather"
+  }, 
+  {
+    "birth_date": "1945-2-20", 
+    "death_date": null, 
+    "group": null, 
+    "name": "George Fitzgerald Smoot III", 
+    "title": "George Smoot"
+  }, 
+  {
+    "birth_date": "1938-03-07", 
+    "death_date": null, 
+    "group": null, 
+    "name": "Albert Fert", 
+    "title": "Albert Fert"
+  }, 
+  {
+    "birth_date": "1939-05-18", 
+    "death_date": null, 
+    "group": null, 
+    "name": "Peter Gr\u00fcnberg", 
+    "title": "Peter Gr\u00fcnberg"
+  }, 
+  {
+    "birth_date": "1944-4-7", 
+    "death_date": null, 
+    "group": null, 
+    "name": "\u5c0f\u6797 \u8aa0 <br/>Makoto Kobayashi", 
+    "title": "Makoto Kobayashi (physicist)"
+  }, 
+  {
+    "birth_date": "1940-2-7", 
+    "death_date": null, 
+    "group": null, 
+    "name": "\u76ca\u5ddd \u654f\u82f1 <br/>Toshihide Maskawa", 
+    "title": "Toshihide Maskawa"
+  }, 
+  {
+    "birth_date": "1921-01-18", 
+    "death_date": null, 
+    "group": null, 
+    "name": "Yoichiro Nambu<br />\u5357\u90e8 \u967d\u4e00\u90ce", 
+    "title": "Yoichiro Nambu"
+  }, 
+  {
+    "birth_date": "1933-11-4", 
+    "death_date": null, 
+    "group": null, 
+    "name": "<small>The Honourable</small><br />Sir Charles Kuen Kao<br />\u9ad8\u9315<br /><small>[[Recipient of the Grand Bauhinia Medal|GBM]] [[Knight Commander of the Most Excellent Order of the British Empire|KBE]] [[Fellow of the Royal Society|FRS]] [[Fellow of the Royal Academy of Engineering|FREng]]</small>", 
+    "title": "Charles K. Kao"
+  }, 
+  {
+    "birth_date": "1924-8-19", 
+    "death_date": "2011-5-7", 
+    "group": null, 
+    "name": "Willard S. Boyle", 
+    "title": "Willard Boyle"
+  }, 
+  {
+    "birth_date": "1930-05-10", 
+    "death_date": null, 
+    "group": null, 
+    "name": "George E. Smith", 
+    "title": "George E. Smith"
+  }, 
+  {
+    "birth_date": "1958-10-21", 
+    "death_date": null, 
+    "group": null, 
+    "name": "Andre Konstantin Geim {{lang-ru|\u0410\u043d\u0434\u0440\u0435\u0439 \u041a\u043e\u043d\u0441\u0442\u0430\u043d\u0442\u0438\u043d\u043e\u0432\u0438\u0447 \u0413\u0435\u0439\u043c}}", 
+    "title": "Andre Geim"
+  }, 
+  {
+    "birth_date": "1974-8-23", 
+    "death_date": null, 
+    "group": null, 
+    "name": "Konstantin Sergeevich Novoselov", 
+    "title": "Konstantin Novoselov"
+  }, 
+  {
+    "birth_date": "1959-09-22", 
+    "death_date": null, 
+    "group": null, 
+    "name": "Saul Perlmutter", 
+    "title": "Saul Perlmutter"
+  }, 
+  {
+    "birth_date": "1967-02-24", 
+    "death_date": null, 
+    "group": null, 
+    "name": "Brian P. Schmidt", 
+    "title": "Brian Schmidt"
+  }, 
+  {
+    "birth_date": "1969-12-16", 
+    "death_date": null, 
+    "group": null, 
+    "name": "Adam Guy Riess", 
+    "title": "Adam Riess"
+  }, 
+  {
+    "birth_date": "1944-09-11", 
+    "death_date": null, 
+    "group": null, 
+    "name": "Serge Haroche", 
+    "title": "Serge Haroche"
+  }, 
+  {
+    "birth_date": "1944-02-24", 
+    "death_date": null, 
+    "group": null, 
+    "name": "David Jeffrey Wineland", 
+    "title": "David J. Wineland"
+  }, 
+  {
+    "birth_date": "1932-11-06", 
+    "death_date": null, 
+    "group": null, 
+    "name": "Fran\u00e7ois Englert", 
+    "title": "Fran\u00e7ois Englert"
+  }, 
+  {
+    "birth_date": "1929-5-29", 
+    "death_date": null, 
+    "group": null, 
+    "name": "Peter Ware Higgs", 
+    "title": "Peter Higgs"
   }
 ]
