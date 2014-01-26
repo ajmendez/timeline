@@ -113,6 +113,16 @@ class Wiki(object):
     html = BeautifulSoup(self.get_page(title, beautiful=True))
     raise ValueError()
   
+  def get_code(self, title, section=None):
+    raise NotImplementedError
+    page = self.get_section(tile, section)
+    return mwparserfromhell.parse(page)
+  
+  def get_beautiful(self, title, section=None):
+    raise NotImplementedError
+    page = self.get_section(title, section, prop='text')
+    return BeautifulSoup(page)
+  
   
   def get_section(self, title, sectionname, **kwargs):
     '''Get a section of a page.  Basically a wrapper around get_page() 
@@ -251,8 +261,11 @@ class Wiki(object):
       # print len(row), row
       # for c in row.findAll('td'):
       #   out[]
-      
-      
+  
+  def get_timeline(title):
+    ''' Grab the data from a nice timeline
+    TODO clean up get_beautiful(), get_code()s
+    '''
     
   
   def get_list(self, title, section, parse_fcn):
@@ -325,7 +338,18 @@ def parse_war():
       print title, len(out)
   # pprint(out)
   json.dump(out, open(WAR_FILE, 'w'), indent=2)
-    
+
+
+
+def parse_timeline():
+  items = [
+    'Timeline_of_musical_events',
+    # 'List_of_years_in_science',
+    # 'Timeline_of_scientific_discoveries',
+  ]
+  raise NotImplementedError
+  with Wiki() as api:
+    api.get_timeline()
 
 
 def parse_simple():
@@ -369,7 +393,8 @@ if __name__ == '__main__':
   # parse_simple()
   # parse_nice()
   
-  parse_war()
+  # parse_war()
+  parse_year_category()
   
   # with Wiki() as api:
   #   print api.get_person('J. J. Thomson', None)
